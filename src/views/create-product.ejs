@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Product</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f0f4f7; /* Color de fondo */
+      color: #343a40; /* Color de texto */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .container {
+      margin-top: 50px;
+      background-color: #ffffff; /* Fondo del contenedor */
+      padding: 30px; /* Espaciado interior */
+      border-radius: 8px; /* Bordes redondeados */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    }
+    h1 {
+      color: #1d3557; /* Color del título */
+      margin-bottom: 30px; /* Margen inferior */
+      font-weight: bold; /* Negrita */
+      text-align: center; /* Centrado */
+    }
+    .form-group label {
+      font-weight: bold; /* Negrita */
+    }
+    .btn-primary {
+      background-color: #1d3557; /* Color del botón principal */
+      border-color: #1d3557; /* Borde del botón principal */
+      width: 100%;
+    }
+    .btn-primary:hover {
+      background-color: #457b9d; /* Color del botón principal al pasar el ratón */
+      border-color: #457b9d; /* Borde del botón principal al pasar el ratón */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Create Product</h1>
+    <form action="/products" method="POST">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control" id="description" name="description"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input type="number" class="form-control" id="price" name="price" step="0.01" required>
+      </div>
+      <div class="form-group">
+        <label for="stock">Stock</label>
+        <input type="number" class="form-control" id="stock" name="stock" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Create Product</button>
+    </form>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+

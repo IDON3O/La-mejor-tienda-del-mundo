@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Products</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f0f4f7; /* Color de fondo */
+      color: #343a40;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .container {
+      margin-top: 50px;
+      background-color: #ffffff; /* Fondo del contenedor */
+      padding: 30px; /* Espaciado interior */
+      border-radius: 8px; /* Bordes redondeados */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    }
+    h1 {
+      color: #1d3557; /* Color del título */
+      margin-bottom: 30px; /* Margen inferior */
+      font-weight: bold; /* Negrita */
+      text-align: center; /* Centrado */
+    }
+    .btn-primary {
+      background-color: #1d3557; /* Color del botón principal */
+      border-color: #1d3557; /* Borde del botón principal */
+    }
+    .btn-primary:hover {
+      background-color: #457b9d; /* Color del botón principal al pasar el ratón */
+      border-color: #457b9d; /* Borde del botón principal al pasar el ratón */
+    }
+    .card {
+      margin-bottom: 20px; /* Margen inferior */
+    }
+    .card-title {
+      color: #1d3557; /* Color del título de la tarjeta */
+      font-weight: bold; /* Negrita */
+    }
+    .card-text {
+      color: #343a40; /* Color del texto de la tarjeta */
+    }
+    .alert-success {
+      background-color: #d4edda;
+      border-color: #c3e6cb;
+      color: #155724;
+    }
+    .alert-dismissible .close {
+      color: #155724;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center">Product List</h1>
+
+    <!-- Mensaje de éxito -->
+    <% if (successMsg && successMsg.length > 0) { %>
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <%= successMsg %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <% } %>
+
+    <div class="d-flex justify-content-between align-items-center">
+      <div>
+        <a href="/products/create" class="btn btn-primary mb-3">Add Product</a>
+        <a href="/store/users" class="btn btn-primary mb-3">View Users</a>
+      </div>
+      <a href="/store/logout" class="btn btn-danger">Logout</a>
+    </div>
+
+    <div class="row">
+      <% products.forEach(product => { %>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><%= product.name %></h5>
+              <p class="card-text"><%= product.description %></p>
+              <p class="card-text">Price: $<%= parseFloat(product.price).toFixed(2) %></p>
+              <p class="card-text">Stock: <%= product.stock %></p>
+              <form action="/products/<%= product.id %>/buy" method="POST">
+                <button type="submit" class="btn btn-primary">Buy</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

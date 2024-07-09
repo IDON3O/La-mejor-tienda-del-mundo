@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User List</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f0f4f7; /* Color de fondo */
+      color: #343a40;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background-color: #ffffff; /* Fondo del contenedor */
+      padding: 30px; /* Espaciado interior */
+      border-radius: 8px; /* Bordes redondeados */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+      max-width: 800px; /* Ancho máximo */
+      width: 100%;
+    }
+    h1 {
+      color: #1d3557; /* Color del título */
+      margin-bottom: 30px; /* Margen inferior */
+      font-weight: bold; /* Negrita */
+      text-align: center; /* Centrado */
+    }
+    .btn-primary {
+      background-color: #1d3557; /* Color del botón principal */
+      border-color: #1d3557; /* Borde del botón principal */
+    }
+    .btn-primary:hover {
+      background-color: #457b9d; /* Color del botón principal al pasar el ratón */
+      border-color: #457b9d; /* Borde del botón principal al pasar el ratón */
+    }
+    .btn-warning {
+      background-color: #ffca28; /* Color del botón de advertencia */
+      border-color: #ffca28; /* Borde del botón de advertencia */
+    }
+    .btn-warning:hover {
+      background-color: #ffa000; /* Color del botón de advertencia al pasar el ratón */
+      border-color: #ffa000; /* Borde del botón de advertencia al pasar el ratón */
+    }
+    .btn-danger {
+      background-color: #e63946; /* Color del botón de peligro */
+      border-color: #e63946; /* Borde del botón de peligro */
+    }
+    .btn-danger:hover {
+      background-color: #d32f2f; /* Color del botón de peligro al pasar el ratón */
+      border-color: #d32f2f; /* Borde del botón de peligro al pasar el ratón */
+    }
+    table {
+      margin-top: 20px; /* Margen superior */
+    }
+    table th {
+      background-color: #1d3557; /* Color de fondo de los encabezados */
+      color: white; /* Color de texto de los encabezados */
+    }
+    table tbody tr:hover {
+      background-color: #e9ecef; /* Color de fondo al pasar el ratón por las filas */
+    }
+    .text-center {
+      text-align: center; /* Centrar texto */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center">User List</h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users.forEach(user => { %>
+          <tr>
+            <td><%= user.username %></td>
+            <td><%= user.email %></td>
+            <td><%= user.user_role %></td>
+            <td>
+              <a href="/store/users/edit/<%= user.id %>" class="btn btn-warning btn-sm">Edit</a>
+              <form action="/store/users/<%= user.id %>?_method=DELETE" method="POST" style="display:inline;">
+                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+              </form>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

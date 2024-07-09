@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f0f4f7; /* Color de fondo */
+            padding-top: 5rem; /* Espaciado superior */
+        }
+        .navbar {
+            background-color: #1d3557; /* Color de fondo de la barra de navegación */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Sombra */
+        }
+        .navbar-brand {
+            font-weight: bold; /* Texto en negrita */
+            color: #f1faee !important; /* Color del texto de la marca */
+        }
+        .nav-link {
+            color: #f1faee !important; /* Color de los enlaces de navegación */
+        }
+        .hero {
+            background: linear-gradient(rgba(29, 53, 87, 0.7), rgba(29, 53, 87, 0.7)), url('/1500x500.jpeg') center/cover;
+            color: #f1faee;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .container h2 {
+            color: #1d3557;
+            margin-top: 2rem;
+            font-weight: bold;
+        }
+        .container p {
+            margin-bottom: 1rem;
+        }
+        .container ul li {
+            list-style: none; /* Eliminar viñetas de la lista */
+            margin-bottom: 0.5rem; /* Espacio entre elementos de la lista */
+        }
+        .container ul li a {
+            text-decoration: none; /* Eliminar subrayado de los enlaces */
+            color: #1d3557; /* Color del enlace */
+            font-weight: bold;
+        }
+        .container ul li a:hover {
+            text-decoration: underline; /* Subrayado al pasar el ratón */
+        }
+        .footer {
+            background-color: #1d3557;
+            color: #f1faee;
+            padding: 1rem 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="/">Mi tienda</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/store/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/store/register">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="hero">
+        <h1>Welcome to La Mejor Tienda Del Mundo</h1>
+        <p>La tienda donde intenter hacerlo todo en ingles y luego me enrrede</p>
+        <a href="/store/register" class="btn btn-primary btn-lg">Join Us Now</a>
+    </div>
+    <div class="container">
+        <h2>About Us</h2>
+        <p>Este es un proyecto para web 2, donde manejo una simple base de datos y una api con node para crear una pagina web de una tienda.</p>
+        <p>Si inicia secion con una cuanta admin, podra acceder a diferentes opciones de actualicacion y creacion de productos, delo contrario, podra ver y comprar productos.</p>
+        <h2>Our Services</h2>
+        <ul>
+            <li><a href="/store/register">Registrase</a></li>
+            <li><a href="/products/admin/products">Administrar productos</a></li>
+            <li><a href="/products/user-products">Comprar productos</a></li>
+        </ul>
+        <h2>Recomendaciones</h2>
+        <p>Para crear usuarios admin, estos se hacen directamente en la base de datos, puesto que todos los usuarios creados en la web seran de rol normal,  <a href="/ni-modo.gif">ni modo</a>.</p>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 Programacion web 2. Universidad de Caldas.</p>
+    </footer>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
